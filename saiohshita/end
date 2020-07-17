@@ -1,0 +1,48 @@
+
+class judgeHand{
+  void win(int win,int lose){
+    drawResult(win,lose,"Player Win");
+  }
+  void even(int win,int lose){
+    drawResult(win,lose,"Even");
+  }
+  void lose(int win,int lose){
+    drawResult(win,lose,"COM Win");
+  }
+}
+
+void drawResult(int win,int lose,String result){
+  background(255);
+  fill(0);
+  textSize(30);
+  text("player   -     COM",width/2-125,height/4);
+  text(win,width/2-85,height/4+35);
+  text(lose,width/2+85,height/4+35);
+  textSize(60);
+  text(result,width/2-(result.length()*33)/2,height/2);
+  textSize(30);
+  text("Press Enter to back to the title",width/4,3*height/4);
+}
+
+judgeHand case1;
+
+void setup(){
+  background(255);
+  size(800,600);
+  case1 = new judgeHand();
+}
+
+void draw(){
+  int winN = 3;
+  int loseN = 1;
+  
+  if(winN > loseN){
+    case1.win(winN,loseN);
+  }else if(winN < loseN){
+    case1.lose(winN,loseN);
+  }else{
+    case1.even(winN,loseN);
+  }
+  
+  
+}
