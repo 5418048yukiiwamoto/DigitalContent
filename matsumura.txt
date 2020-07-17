@@ -1,0 +1,33 @@
+class judgeHand{
+  int winCount = 0;
+  int loseCount = 0;
+  
+  void judge(int player,int cpu){
+    if(player > cpu)
+      winCount += 1;
+    if(player < cpu)
+      loseCount += 1;
+  }
+  
+  int win(){
+    return winCount;
+  }
+  int lose(){
+    return loseCount;
+  }
+}
+
+judgeHand jH;
+void setup(){
+  jH = new judgeHand();
+  noLoop();
+}
+
+void draw(){
+  int[] a = {1,2,3,3,2,4};//奇数をプレイヤーとした簡単な例
+  for(int i = 0;i < 6;i+=2){
+    jH.judge(a[i],a[i+1]);
+  }
+  println(jH.win());
+  println(jH.lose());
+}
