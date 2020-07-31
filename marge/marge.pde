@@ -282,10 +282,11 @@ void setup(){
 void drawTitle(){
   background(255);
   fill(0);
-  textSize(50);
-  text("game name",width/3,height/3);
-  text("Press Enter to start game",width/3-100,height/2);
-  text("Press Q to switch game",width/3-100,2*height/3);
+  textSize(80);
+  text("カードバトル式　数比べ",50,height/3);
+  textSize(30);
+  text("Press Enter to start game",width/2+100,height/2);
+  text("Press Q to switch game",width/2+100,2*height/3);
 }
 
 void drawConfig(){
