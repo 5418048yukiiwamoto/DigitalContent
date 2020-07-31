@@ -277,10 +277,7 @@ void setup(){
   
   PFont font = createFont("Meiryo", 50);
   textFont(font);
-  a = new myHand();
-  b = new comHand();
-  c = new printHand();
-  d = new selectHand();
+  
   
 }
 
@@ -438,9 +435,13 @@ void draw(){
   }else if(scene == 2){
     background(255);
     textSize(30);
-    d.judge = 0;
+    
   
     if(stop == 0) {
+      a = new myHand();
+      b = new comHand();
+      c = new printHand();
+      d = new selectHand();
       d.n = 0;
       a.decideType();
       a.handOut();
@@ -456,6 +457,7 @@ void draw(){
     c.printMyhand(a.type,a.hand);
     c.printComhand(b.type,b.hand);
     c.printInformation(nowturn,turn,winGameCount,loseGameCount);
+    d.judge = 0;
     d.printSelect(d.myUsed, d.n);
     d.printPlayButton(d.n);
     
